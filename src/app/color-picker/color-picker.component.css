@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  width: 316px;
+  padding: 16px;
+}
+.color-wrapper {
+  display: flex;
+  height: 250px;
+  position:relative;
+}
+
+.input-wrapper {
+  margin-top: 16px;
+  display: flex;
+  border-radius: 1px;
+  border: 1px solid #666;
+  padding: 8px;
+  height: 32px;
+  justify-content: center;
+  color:#999;
+  width:70%;
+}
+
+.color-div {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.text {
+  flex: 1;
+  font-family: 'Helvetica';
+  line-height: 32px;
+}

@@ -1,0 +1,8 @@
+
+<div class=color-wrapper>  
+  <app-color-slider (color)="hue=$event"></app-color-slider>
+  <app-color-palette [hue]="hue" (color)="color = $event"></app-color-palette>
+</div>
+<div class="input-wrapper">
+  <span class="text">{{color}}</span>  
+</div>

@@ -1,0 +1,15 @@
+.color-palette, .color-palette:hover {
+  border-radius:50%;
+  cursor: pointer;
+}
+
+:host {
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  top: 28%;
+  left: 22%;
+}
+
+
