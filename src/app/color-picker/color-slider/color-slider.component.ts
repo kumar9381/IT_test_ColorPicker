@@ -14,8 +14,7 @@ export class ColorSliderComponent implements AfterViewInit {
 
   private ctx: CanvasRenderingContext2D;
   private mousedown: boolean = false;
-  private selectedPosition: number;
- 
+  private selectedHeight: number;
 
   ngAfterViewInit() {
     this.draw();
@@ -28,7 +27,7 @@ export class ColorSliderComponent implements AfterViewInit {
     const width = this.canvas.nativeElement.width;
     const height = this.canvas.nativeElement.height;
 
-    this.ctx.clearRect(120, 120, 0,0);
+    this.ctx.clearRect(0, 0, width, height);
 
     const gradient = this.ctx.createLinearGradient(0, 0, 0, height);
     //this.ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
@@ -52,7 +51,7 @@ export class ColorSliderComponent implements AfterViewInit {
 
   
 
-  if (this.selectedPosition) {
+  if (this.selectedHeight) {
       this.ctx.strokeStyle = 'white';
       this.ctx.fillStyle = 'white';
       this.ctx.beginPath();
@@ -71,14 +70,14 @@ export class ColorSliderComponent implements AfterViewInit {
 
   onMouseDown(evt: MouseEvent) {
     this.mousedown = true;
-    this.selectedPosition = evt.offsetY;
+    this.selectedHeight = evt.offsetY;
     this.draw();
     this.emitColor(evt.offsetX, evt.offsetY);
   }
 
   onMouseMove(evt: MouseEvent) {
     if (this.mousedown) {
-      this.selectedPosition = evt.offsetY;
+      this.selectedHeight = evt.offsetY;
       this.draw();
       this.emitColor(evt.offsetX, evt.offsetY);
     }
